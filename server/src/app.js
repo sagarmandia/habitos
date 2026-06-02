@@ -14,6 +14,9 @@ dotenv.config();
 
 const app = express();
 
+// Trust proxy, reverse proxy 
+app.set('trust proxy', 1);
+
 // Security rate limiters
 const generalLimiter = rateLimit({
   windowMs: 15 * 60 * 1000, // 15 minutes
